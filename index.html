@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Какой ты сегодня Микки 17</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #mickeyImage {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Какой ты сегодня Микки 17</h1>
+    <img id="mickeyImage" src="" alt="Микки 17">
+    <button onclick="getRandomMickey()">Узнать</button>
+
+    <script>
+        const images = [
+            'mickey1.jpg', 'mickey2.jpg', 'mickey3.jpg',
+            'mickey4.jpg', 'mickey5.jpg', 'mickey6.jpg',
+            'mickey7.jpg', 'mickey8.jpg', 'mickey9.jpg'
+        ];
+
+        function getRandomMickey() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const imageElement = document.getElementById('mickeyImage');
+            imageElement.src = images[randomIndex];
+        }
+
+        // Загрузка случайного изображения при открытии страницы
+        getRandomMickey();
+    </script>
+</body>
+</html>
